@@ -15,6 +15,7 @@
         <label for="gbest">Update GBest (X,Y):</label>
         <input type="text" id="gbestx" name="gbestx">
         <input type="text" id="gbesty" name="gbesty">
+        <input type="text" id="imagename" name="imagename">
         <button type="submit">Update GBest</button>
     </form>
     <canvas id="canvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
@@ -34,11 +35,8 @@
             img.onerror = function() {
             console.error('Failed to load the image');
             };
-            //img.src = 'penguin_in_new_york.webp'; // Set source path, adjust as needed
-            //img.src = 'https://source.unsplash.com/random/800x600'; // Make sure this URL loads an image successfully
-            //img.src= 'test.png'
             img.src ="{{ media_url }}penguin_in_new_york.webp"
-            //img.src="{% static 'test.png' %}"
+            img.src = "{{ media_url}}{{image_name}}"
             console.log(img)
 
 
